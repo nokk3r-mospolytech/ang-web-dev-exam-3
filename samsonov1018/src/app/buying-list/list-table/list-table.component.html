@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <h5>{{title}}</h5>
+    <div class="row">
+        <table  class="table">
+            <thead>
+              <tr>
+                <th scope="col" style=" width: 10%;">id продукта</th>
+                <th scope="col" style="cursor: pointer; width: 20%;" (click)=sortTable(0) >Имя продукта</th>
+                <th scope="col" style="width: 20%;">Количество</th>
+                <th scope="col" style="cursor: pointer; width: 20%;">Статус покупки</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="active bg-success" *ngFor="let list of lists | findName: searchStroke">
+                <th *ngIf="list.bought == '0'" scope="row">{{list.id}}</th>
+                <td *ngIf="list.bought == '0'">{{list.name}}</td>
+                <td *ngIf="list.bought == '0'">{{list.count}}</td>
+                <td *ngIf="list.bought == '0'">
+                  <button (click)="changeTheme(list.id)" class="btn btn-primary">Не куплено</button>
+                </td>
+                <td *ngIf="list.bought == '0'" class="text-right">
+                  <div class="button btn btn-outline-danger" (click)="onDelete(list.id)">
+                      Удалить
+                  </div>
+                </td>
+                <td *ngIf="list.bought == '0'" class="text-right">
+                    <div class="button btn btn-outline-warning" (click)="onLinkProfile(list.id)">
+                        Редактировать
+                    </div>
+                </td>
+              <tr class="bg-light" *ngFor="let list of lists | findName: searchStroke">
+                <th *ngIf="list.bought == '1'" scope="row">{{list.id}}</th>
+                <td *ngIf="list.bought == '1'">{{list.name}}</td>
+                <td *ngIf="list.bought == '1'">{{list.count}}</td>
+                <td *ngIf="list.bought == '1'">
+                  <button (click)="changeTheme(list.id)" class="btn btn-primary">Куплено</button>
+                </td>
+                <td *ngIf="list.bought == '1'" class="text-right">
+                  <div class="button btn btn-outline-danger" (click)="onDelete(list.id)">
+                    Удалить
+                  </div>
+                </td>
+                <td *ngIf="list.bought == '1'" class="text-right">
+                  <div class="button btn btn-outline-warning" (click)="onLinkProfile(list.id)">
+                    Редактировать
+                  </div>
+                </td>
+            </tbody>
+          </table>
+    </div>
+</div>

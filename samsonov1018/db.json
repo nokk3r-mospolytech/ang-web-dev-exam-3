@@ -1,0 +1,34 @@
+{
+  "list": [
+    {
+      "name": "Logitech",
+      "count": 4,
+      "bought": "1",
+      "id": 2
+    },
+    {
+      "name": "Samsung",
+      "count": 321,
+      "bought": "1",
+      "id": 3
+    },
+    {
+      "name": "123321",
+      "count": 23,
+      "bought": "1",
+      "id": 4
+    },
+    {
+      "name": "gf",
+      "count": 23,
+      "bought": "1",
+      "id": 7
+    },
+    {
+      "name": "213",
+      "count": 32,
+      "bought": "1",
+      "id": 8
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <form [formGroup]="formGroup">
+        <label for="name">Название</label>
+        <input
+        type ="text"
+        class="form-control"
+        formControlName="name"
+        id="name"
+        />
+    </form>
+    <form [formGroup]="formGroup">
+      <label for="count">Количество</label>
+      <input
+        type ="number"
+        class="form-control"
+        formControlName="count"
+        id="count"
+      />
+    </form>
+    <form [formGroup]="formGroup">
+        <label for="bought">Статус покупки</label>
+        <select class="form-control" formControlName="bought" id="bought">
+            <option [ngValue]="isPurchased.no_purchased">Не куплено</option>
+            <option [ngValue]="isPurchased.purchased">Куплено</option>
+          </select>
+    </form>
+
+    <button class="btn btn-outline-primary" [disabled]="formGroup.invalid" (click)="onSave();">
+        Сохранить
+    </button>
+    <button class="btn btn-outline-danger ml-2" *ngIf="id != null" (click)="onDelete();">
+        Удалить
+    </button>
+</div>

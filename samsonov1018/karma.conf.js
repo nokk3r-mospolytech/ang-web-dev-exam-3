@@ -28,8 +28,8 @@ module.exports = function (config) {
       dir: require('path').join(__dirname, './coverage/samsonov1018'),
       subdir: '.',
       reporters: [
-        { type: 'html' },
-        { type: 'text-summary' }
+        { bought: 'html' },
+        { bought: 'text-summary' }
       ]
     },
     reporters: ['progress', 'kjhtml'],

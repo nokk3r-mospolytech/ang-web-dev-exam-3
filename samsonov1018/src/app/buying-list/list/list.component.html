@@ -1,0 +1,23 @@
+
+<div class="row my-4">
+    <div class="col-2">
+        <button class="btn btn-outline-primary  float-right" (click)="onAddObject()">
+            Добавить предмет
+        </button>
+    </div>
+    <div class="col-8">
+        <input
+        type="text"
+        class="form-control"
+        placeholder="Найти предмет"
+        [(ngModel)]="searchStr"
+        />
+    </div>
+
+</div>
+<app-list-table
+    [title]="'Список покупок'"
+    [typeS]="0"
+    [searchStroke]="searchStr"
+    >
+</app-list-table>
